@@ -6,11 +6,11 @@
 #    By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 12:35:05 by chtan             #+#    #+#              #
-#    Updated: 2025/04/18 15:27:56 by chtan            ###   ########.fr        #
+#    Updated: 2025/05/01 16:56:06 by chtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	./FragTrap
+NAME			=	./Animal
 CXX				=	@c++
 CXXFLAGS		=	-Wall -Wextra -Werror -pedantic -std=c++98 -g3
 SRC				=	./src/*.cpp
