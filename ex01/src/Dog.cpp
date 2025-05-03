@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:47:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/01 17:07:35 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/03 14:59:39 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,16 @@ Dog::~Dog()
 void Dog::makeSound() const
 {
     std::cout << BLUE_H << "Woof!" << RESET_H << std::endl;
+}
+
+void Dog::getIdeas() const
+{
+    std::cout << BLUE_H << "Dog getIdeas called" << RESET_H << std::endl;
+    _brain->getIdea(0);
+}
+
+void Dog::setIdea(size_t i, std::string idea)
+{
+    std::cout << BLUE_H << "Dog setIdea called" << RESET_H << std::endl;
+    _brain->setIdea(i, idea);
 }

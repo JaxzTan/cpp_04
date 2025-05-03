@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:15:09 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/01 16:56:39 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/03 15:10:34 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@
 
 class Animal
 {
+	protected:
+		std::string _type;
+
     public:
         Animal();
         Animal(const Animal &src);
@@ -35,9 +38,6 @@ class Animal
         virtual void makeSound() const;
         std::string getType() const;
         void setType(const std::string &type);
-
-    protected:
-        std::string _type;
 };
 
 #endif

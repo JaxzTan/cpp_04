@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:44:25 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/01 16:58:59 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/03 14:59:14 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,16 @@ Cat::~Cat()
 void Cat::makeSound() const
 {
     std::cout << BLUE_H << "Meow!" << RESET_H << std::endl;
+}
+
+void Cat::getIdeas() const
+{
+    std::cout << BLUE_H << "Cat getIdeas called" << RESET_H << std::endl;
+    _brain->getIdea(0);
+}
+
+void Cat::setIdea(size_t i, std::string idea)
+{
+    std::cout << BLUE_H << "Cat setIdea called" << RESET_H << std::endl;
+    _brain->setIdea(i, idea);
 }
