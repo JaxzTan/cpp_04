@@ -6,16 +6,16 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:15:09 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/03 15:10:34 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/04 11:17:32 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
 
 #include <iostream>
 #include <string>
+#include <cstdio>
+#include <cstdlib>
 
 # define GREEN_H "\033[0;32m" //constructor called
 # define RESET_H "\033[0m"
@@ -28,16 +28,20 @@ class Animal
 {
 	protected:
 		std::string _type;
+		Animal();
 
-    public:
-        Animal();
-        Animal(const Animal &src);
-        virtual ~Animal();
-        Animal &operator=(const Animal &rhs);
+	public:
+	// Constructors
+		Animal(const Animal &copy);
 
-        virtual void makeSound() const;
-        std::string getType() const;
-        void setType(const std::string &type);
+	// Deconstructors
+		virtual ~Animal();
+
+	// Overloaded Operators
+		Animal &operator=(const Animal &src);
+
+	// Public Methods
+		virtual void makeSound(void)const = 0;
+	// Getter
+		std::string getType(void)const;
 };
-
-#endif

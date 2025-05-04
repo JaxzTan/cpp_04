@@ -6,52 +6,73 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:47:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/03 14:59:39 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/04 11:23:40 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Dog.hpp"
 
-Dog::Dog()
+// Constructors
+Dog::Dog(): Animal()
 {
-    std::cout << GREEN_H << "Dog constructor called" << RESET_H << std::endl;
-    this->_type = "Dog";
+	std::cout << "Dog Default Constructor called" << std::endl;
+	this->_type = "Dog";
+	this->_brain = new Brain();
+	if (this->_brain == NULL)
+	{
+		perror("Dog Brain allocation failed");
+		std::cerr << "Exiting the process now." << std::endl;
+		exit(1);
+	}
 }
 
-Dog::Dog(const Dog &src): Animal(src)
+Dog::Dog(const Dog &copy): Animal()
 {
-    std::cout << GREEN_H << "Dog copy constructor called" << RESET_H << std::endl;
-    *this = src;
+	std::cout << "Dog Copy Constructor called" << std::endl;
+	*this = copy;
 }
 
-Dog &Dog::operator=(const Dog &src)
-{
-    std::cout << GREEN_H << "Dog assignment operator called" << RESET_H << std::endl;
-    if (this != &src)
-    {
-        this->_type = src._type;
-    }
-    return *this;
-}
-
+// Deconstructors
 Dog::~Dog()
 {
-    std::cout << RED_H << "Dog destructor called" << RESET_H << std::endl;
+	delete(this->_brain);
+	std::cout << "Dog Deconstructor called" << std::endl;
 }
 
-void Dog::makeSound() const
+// Overloaded Operators
+Dog &Dog::operator=(const Dog &src)
 {
-    std::cout << BLUE_H << "Woof!" << RESET_H << std::endl;
+	std::cout << "Dog Assignation operator called" << std::endl;
+	if (this == &src)
+		return *this;
+
+	this->_type = src._type;
+	this->_brain = new Brain();
+	if (this->_brain == NULL)
+	{
+		perror("Dog Brain allocation failed");
+		std::cerr << "Exiting the process now." << std::endl;
+		exit(1);
+	}
+	*this->_brain = *src._brain;
+	return *this;
 }
 
-void Dog::getIdeas() const
+// Public Methods
+void	Dog::makeSound(void)const
 {
-    std::cout << BLUE_H << "Dog getIdeas called" << RESET_H << std::endl;
-    _brain->getIdea(0);
+	std::cout << this->getType() << " says: **Woof**" << std::endl;
 }
 
-void Dog::setIdea(size_t i, std::string idea)
+// Getter
+void	Dog::getIdeas(void)const
 {
-    std::cout << BLUE_H << "Dog setIdea called" << RESET_H << std::endl;
-    _brain->setIdea(i, idea);
+	for (int i = 0; i < 3; i++)// change the 3 to 100 to show all ideas
+		std::cout << "\tIdea " << i << " of the Dog is: \"" << this->_brain->getIdea(i) << "\" at the address " << this->_brain->getIdeaAddress(i) << std::endl;
+}
+
+// Setter
+void	Dog::setIdea(size_t i, std::string idea)
+{
+		this->_brain->setIdea(i, idea);
 }

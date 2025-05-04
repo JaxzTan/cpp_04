@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:19:26 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/02 10:51:16 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/04 11:19:10 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,4 @@ void Animal::makeSound() const
 std::string Animal::getType() const
 {
     return this->_type;
-}
-
-void Animal::setType(const std::string &type)
-{
-    this->_type = type;
-    std::cout << PURPLE_H << "Animal setType called" << RESET_H <<std::endl;
 }

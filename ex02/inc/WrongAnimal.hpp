@@ -6,14 +6,13 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 09:31:26 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/03 14:56:27 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/04 11:16:00 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Animal.hpp"
-#include "iostream"
 
 class WrongAnimal
 {
