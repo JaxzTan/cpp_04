@@ -6,11 +6,11 @@
 #    By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/09 12:35:05 by chtan             #+#    #+#              #
-#    Updated: 2025/04/18 15:27:56 by chtan            ###   ########.fr        #
+#    Updated: 2025/05/03 19:24:38 by chtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=	./FragTrap
+NAME			=	./watch_it_burn
 CXX				=	@c++
 CXXFLAGS		=	-Wall -Wextra -Werror -pedantic -std=c++98 -g3
 SRC				=	./src/*.cpp
@@ -20,7 +20,7 @@ OBJ_DIR			=	./obj
 # makefile-rules  								  			#
 # ------------------------------------------------------------------#
 all				:	$(NAME)
-					@echo "\033[0;32mClapTrap is ready!\033[0m"
+					@echo "\033[0;32mProgram is ready!\033[0m"
 
 $(NAME)			:	$(SRC)
 	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(SRC)
@@ -29,7 +29,7 @@ $(NAME)			:	$(SRC)
 
 clean			:
 	@rm -rf $(OBJ_DIR) && rm -rf ./*.o
-	@echo "\033[0;31mClapTrap deleted successfully!\033[0m"
+	@echo "\033[0;31mProgram deleted successfully!\033[0m"
 
 fclean			:	clean
 	@rm -rf $(NAME)
