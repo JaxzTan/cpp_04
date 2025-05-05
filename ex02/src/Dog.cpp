@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:47:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/04 11:23:40 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 17:41:57 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Constructors
 Dog::Dog(): Animal()
 {
-	std::cout << "Dog Default Constructor called" << std::endl;
+	std::cout << GREEN_H << "Dog Default Constructor called" << RESET_H << std::endl;
 	this->_type = "Dog";
 	this->_brain = new Brain();
 	if (this->_brain == NULL)
@@ -36,7 +36,7 @@ Dog::Dog(const Dog &copy): Animal()
 Dog::~Dog()
 {
 	delete(this->_brain);
-	std::cout << "Dog Deconstructor called" << std::endl;
+	std::cout << RED_H <<"Dog Deconstructor called" << RESET_H << std::endl;
 }
 
 // Overloaded Operators
@@ -61,7 +61,7 @@ Dog &Dog::operator=(const Dog &src)
 // Public Methods
 void	Dog::makeSound(void)const
 {
-	std::cout << this->getType() << " says: **Woof**" << std::endl;
+	std::cout << PURPLE_H << this->getType() << " says: **Woof**" << RESET_H <<std::endl;
 }
 
 // Getter
