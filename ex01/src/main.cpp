@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:53:57 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/03 15:08:19 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 17:14:05 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,97 +20,124 @@
 
 int main()
 {
-	std::cout << "\033[34mConstructing\033[0m" << std::endl;
-	const Animal	*meta[10];
-	for (int i = 0; i < 10; i++)
+	const int	SIZE = 4;
+	Animal		*animals[SIZE]; // no constructors called here
+
+	for (size_t i = 0; i < SIZE / 2; ++i)
+		animals[i] = new Dog();
+	for (size_t i = SIZE / 2; i < SIZE; ++i)
+		animals[i] = new Cat();
+    for (size_t i = 0; i < SIZE; ++i)
+        animals[i]->makeSound();
+    for (size_t i = 0; i < SIZE; ++i)
+		delete animals[i];
+
+	std::cout << "\n[ DEEP COPY CHECK ]\n";
+	Dog basic;
 	{
-		if (i % 2)
-		{
-			meta[i] = new Cat();
-			if (meta[i] == NULL)
-			{
-				perror("Cat allocation failed");
-				std::cerr << "Exiting process now";
-				exit(1);
-			}
-		}
-		else
-		{
-			meta[i] = new Dog();
-			if (meta[i] == NULL)
-			{
-				perror("Dog allocation failed");
-				std::cerr << "Exiting process now";
-				exit(1);
-			}
-		}
+		Dog tmp (basic);
 	}
-	std::cout << std::endl;
-
-	std::cout << "\033[34mTesting\033[0m" << std::endl;
-	for (int i = 0; i < 10; i++)
-	{
-		std::cout << std::endl;
-		std::cout << "Animal _type: " << meta[i]->getType() << std::endl;
-		meta[i]->makeSound();
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
-
-	std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-	for (int i = 0; i < 10; i++)
-		delete(meta[i]);
-
-//THIS PART IS FOR TESTING DEEP COPY ↓
-
-	std::cout << std::endl << std::endl;
-	std::cout << "#### showing that the copy constructor creates a deep copy ####" << std::endl;
-	std::cout << std::endl;
-
-	std::cout << "\033[34mConstructing\033[0m" << std::endl;
-	Dog *a = new Dog();
-	// Cat *a = new Cat();
-	if (a == NULL)
-	{
-		perror("Allocation failed");
-		std::cerr << "Exiting the process now." << std::endl;
-		exit(1);
-	}
-
-	a->setIdea(0, "I have to sniff it");
-	a->setIdea(1, "I have to pee on it");
-	a->setIdea(2, "I have to sniff it again");
-	a->setIdea(101, "some shit");
-
-	Dog *b = new Dog(*a);
-	// Cat *b = new Cat(*a);
-	if (b == NULL)
-	{
-		perror("Allocation failed");
-		std::cerr << "Exiting the process now." << std::endl;
-		exit(1);
-	}
-	std::cout << std::endl;
-
-	std::cout << "\033[34mTesting a\033[0m" << std::endl;
-	std::cout << "The " << a->getType() << " a has the following ideas: " << std::endl;
-	a->getIdeas();
-	std::cout << std::endl;
-
-	std::cout << "\033[34mDeconstructing a\033[0m" << std::endl;
-	delete(a);
-	std::cout << std::endl;
-
-	std::cout << "\033[34mTesting b\033[0m" << std::endl;
-	std::cout << "The " << b->getType() << " b has the following ideas: " << std::endl;
-	b->getIdeas();
-	std::cout << std::endl;
-
-	std::cout << "\033[34mDeconstructing b\033[0m" << std::endl;
-	delete(b);
-
+	// Dog basic2;
+	// {
+	// 	Dog tmp2;
+	// 	tmp2 = basic2;
+	// }
 	return (0);
 }
+
+// int main()
+// {
+// 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
+// 	const Animal	*meta[10];
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		if (i % 2)
+// 		{
+// 			meta[i] = new Cat();
+// 			if (meta[i] == NULL)
+// 			{
+// 				perror("Cat allocation failed");
+// 				std::cerr << "Exiting process now";
+// 				exit(1);
+// 			}
+// 		}
+// 		else
+// 		{
+// 			meta[i] = new Dog();
+// 			if (meta[i] == NULL)
+// 			{
+// 				perror("Dog allocation failed");
+// 				std::cerr << "Exiting process now";
+// 				exit(1);
+// 			}
+// 		}
+// 	}
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mTesting\033[0m" << std::endl;
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		std::cout << std::endl;
+// 		std::cout << "Animal _type: " << meta[i]->getType() << std::endl;
+// 		meta[i]->makeSound();
+// 		std::cout << std::endl;
+// 	}
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+// 	for (int i = 0; i < 10; i++)
+// 		delete(meta[i]);
+
+// //THIS PART IS FOR TESTING DEEP COPY ↓
+
+// 	std::cout << std::endl << std::endl;
+// 	std::cout << "#### showing that the copy constructor creates a deep copy ####" << std::endl;
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mConstructing\033[0m" << std::endl;
+// 	Dog *a = new Dog();
+// 	// Cat *a = new Cat();
+// 	if (a == NULL)
+// 	{
+// 		perror("Allocation failed");
+// 		std::cerr << "Exiting the process now." << std::endl;
+// 		exit(1);
+// 	}
+
+// 	a->setIdea(0, "I have to sniff it");
+// 	a->setIdea(1, "I have to pee on it");
+// 	a->setIdea(2, "I have to sniff it again");
+// 	a->setIdea(101, "some shit");
+
+// 	Dog *b = new Dog(*a);
+// 	// Cat *b = new Cat(*a);
+// 	if (b == NULL)
+// 	{
+// 		perror("Allocation failed");
+// 		std::cerr << "Exiting the process now." << std::endl;
+// 		exit(1);
+// 	}
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mTesting a\033[0m" << std::endl;
+// 	std::cout << "The " << a->getType() << " a has the following ideas: " << std::endl;
+// 	a->getIdeas();
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mDeconstructing a\033[0m" << std::endl;
+// 	delete(a);
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mTesting b\033[0m" << std::endl;
+// 	std::cout << "The " << b->getType() << " b has the following ideas: " << std::endl;
+// 	b->getIdeas();
+// 	std::cout << std::endl;
+
+// 	std::cout << "\033[34mDeconstructing b\033[0m" << std::endl;
+// 	delete(b);
+
+// 	return (0);
+// }
 
 
 // int main() {
