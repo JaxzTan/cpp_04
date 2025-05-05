@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 09:31:26 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/02 10:46:50 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 14:46:04 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class WrongAnimal
 {
     protected:
         std::string type;
+
     public:
         WrongAnimal();
         WrongAnimal(const WrongAnimal &copy);
