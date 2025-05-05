@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 10:42:17 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/02 10:46:37 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 15:28:42 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ class WrongCat : public WrongAnimal
         WrongCat &operator=(const WrongCat &copy);
         ~WrongCat();
         
-        void makeSound() const;
+        void    makeSound() const;
 };

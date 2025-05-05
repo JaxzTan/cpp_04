@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:19:26 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/02 10:51:16 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 14:56:09 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Animal::~Animal()
 
 void Animal::makeSound() const
 {
-    std::cout << YELLOW_H << "Animal sound" << RESET_H << std::endl;
+    std::cout << BLUE_H << "Animal sound" << RESET_H << std::endl;
 }
 
 std::string Animal::getType() const

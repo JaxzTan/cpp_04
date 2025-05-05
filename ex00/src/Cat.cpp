@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:44:25 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/01 16:58:59 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 14:59:33 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat() : Animal()
 {
     std::cout << GREEN_H << "Cat default constructor called" << RESET_H << std::endl;
+    this->_type = "Cat";
 }
 
 Cat::Cat(const Cat &src) : Animal(src)

@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 09:31:26 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/05 14:46:04 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 15:28:36 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class WrongAnimal
         WrongAnimal &operator=(const WrongAnimal &copy);
         virtual ~WrongAnimal();
         
-        void makeSound() const;
+        void        makeSound() const;
         std::string getType() const;
-        void setType(std::string type);
+        void        setType(std::string type);
 };

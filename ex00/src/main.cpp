@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:53:57 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/02 10:52:18 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/05 15:28:08 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,26 @@
 #include "../inc/WrongCat.hpp"
 
 int main() {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
+    const Animal* j     = new Dog();
+    const Animal* i     = new Cat();
+    const Animal* meta  = new Animal();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
+    std::cout << "-------- Animal Tests --------" << std::endl;
+    std::cout << YELLOW_H << j->getType() << RESET_H << " " << std::endl;
+    std::cout << YELLOW_H << i->getType() << RESET_H << " " << std::endl;
+    std::cout << YELLOW_H << meta->getType() << RESET_H << " " << std::endl;
     i->makeSound(); // ✅ correct: Cat sound
     j->makeSound(); // ✅ correct: Dog sound
     meta->makeSound(); // Animal sound
+    std::cout << std::endl;
 
     std::cout << "-------- WrongAnimal Tests --------" << std::endl;
     const WrongAnimal* wrongMeta = new WrongAnimal();
     const WrongAnimal* wrongCat = new WrongCat();
 
-    std::cout << wrongCat->getType() << " " << std::endl;
+    std::cout << std::endl;
+    std::cout << YELLOW_H << wrongMeta->getType() << RESET_H << " " << std::endl;
+    std::cout << YELLOW_H << wrongCat->getType() << RESET_H << " " << std::endl;
     wrongCat->makeSound(); // ❌ WRONG: outputs WrongAnimal sound
     wrongMeta->makeSound(); // WrongAnimal sound
 
