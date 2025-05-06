@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:53:57 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/05 15:28:08 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/06 15:26:48 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ int main() {
     const Animal* i     = new Cat();
     const Animal* meta  = new Animal();
 
+    std::cout << std::endl;
     std::cout << "-------- Animal Tests --------" << std::endl;
     std::cout << YELLOW_H << j->getType() << RESET_H << " " << std::endl;
     std::cout << YELLOW_H << i->getType() << RESET_H << " " << std::endl;
     std::cout << YELLOW_H << meta->getType() << RESET_H << " " << std::endl;
-    i->makeSound(); // ✅ correct: Cat sound
     j->makeSound(); // ✅ correct: Dog sound
+    i->makeSound(); // ✅ correct: Cat sound
     meta->makeSound(); // Animal sound
     std::cout << std::endl;
 
