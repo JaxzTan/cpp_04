@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:44:25 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/07 09:14:51 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 14:59:53 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,18 @@ void Cat::makeSound() const
 
 void Cat::getIdeas() const
 {
-    std::cout << BLUE_H << "Cat getIdeas called" << RESET_H << std::endl;
-    _brain->getIdea(0);
+    std::cout << BLUE_H << "Dog getIdeas called" << RESET_H << std::endl;
+    std::string tmp= _brain->getIdea(42);
+    std::cout << PURPLE_H << _brain->getIdea(50) << RESET_H <<std::endl;
 }
 
 void Cat::setIdea(size_t i, std::string idea)
 {
     std::cout << BLUE_H << "Cat setIdea called" << RESET_H << std::endl;
     _brain->setIdea(i, idea);
+}
+
+void Cat::printBrainAddress() const
+{
+    std::cout << BLUE_H << "Dog brain address: " << _brain << RESET_H << std::endl;
 }

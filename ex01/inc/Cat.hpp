@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:43:24 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/03 14:58:30 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 14:59:08 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,11 @@ class Cat: public Animal{
 	// Constructors
 		Cat();
 		Cat(const Cat &copy);
-
-	// Deconstructors
+		Cat &operator=(const Cat &src);
 		~Cat();
 
-	// Overloaded Operators
-		Cat &operator=(const Cat &src);
-
-	// Public Methods
 		void makeSound(void)const;
-	// Getter
 		void getIdeas(void)const;
-	// Setter
 		void setIdea(size_t i, std::string idea);
+        void printBrainAddress() const;
 };
