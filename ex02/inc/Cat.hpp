@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:43:24 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/04 11:15:33 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 15:02:16 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ class Cat: public Animal{
 		void makeSound(void)const;
 		void getIdeas(void)const;
 		void setIdea(size_t i, std::string idea);
+        void printBrainAddress() const;
 };

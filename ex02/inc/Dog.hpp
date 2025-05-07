@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:45:59 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/03 14:59:32 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 15:02:29 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Dog : public Animal
         void makeSound() const;
 		void getIdeas(void)const;
         void setIdea(size_t i, std::string idea);
+        void printBrainAddress() const;
 };
 
 #endif

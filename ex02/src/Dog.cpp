@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:47:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/05 17:41:57 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 15:03:35 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,21 @@ void	Dog::makeSound(void)const
 }
 
 // Getter
-void	Dog::getIdeas(void)const
+void Dog::getIdeas() const
 {
-	for (int i = 0; i < 3; i++)// change the 3 to 100 to show all ideas
-		std::cout << "\tIdea " << i << " of the Dog is: \"" << this->_brain->getIdea(i) << "\" at the address " << this->_brain->getIdeaAddress(i) << std::endl;
+    std::cout << BLUE_H << "Dog getIdeas called" << RESET_H << std::endl;
+    std::string tmp= _brain->getIdea(42);
+    std::cout << PURPLE_H << _brain->getIdea(50) << RESET_H <<std::endl;
 }
 
 // Setter
 void	Dog::setIdea(size_t i, std::string idea)
 {
 		this->_brain->setIdea(i, idea);
+}
+
+void Dog::printBrainAddress() const
+{
+    std::cout << BLUE_H << "Cat printBrainAddress called" << RESET_H << std::endl;
+    std::cout << "Brain address: " << _brain << std::endl;
 }
