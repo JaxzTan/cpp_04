@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:47:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/07 13:05:04 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 19:29:35 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void Dog::getIdeas() const
 {
     std::cout << BLUE_H << "Dog getIdeas called" << RESET_H << std::endl;
     std::string tmp= _brain->getIdea(42);
-    std::cout << PURPLE_H << _brain->getIdea(50) << RESET_H <<std::endl;
+    std::cout << YELLOW_H << _brain->getIdea(50) << RESET_H <<std::endl;
 }
 
 void Dog::setIdea(size_t i, std::string idea)

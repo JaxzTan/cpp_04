@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:53:57 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/07 13:07:26 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 19:30:57 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int main()
 	{
 		// Dog tmp (basic);
 		basic.setIdea(50, "I love bones");
+		Dog tmp(basic);
 		std::cout << PURPLE_H << "Basic idea: " << RESET_H << std::endl;
 		basic.getIdeas();
-		Dog tmp(basic);
 		std::cout << PURPLE_H << "Temporary idea before set: " << RESET_H << std::endl;
 		tmp.getIdeas();
 		tmp.setIdea(50, "I prefer steak");
