@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 12:47:02 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/07 15:03:35 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 19:36:40 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Dog::Dog(): Animal()
 
 Dog::Dog(const Dog &copy): Animal()
 {
-	std::cout << "Dog Copy Constructor called" << std::endl;
+	std::cout << GREEN_H <<"Dog Copy Constructor called" << RESET_H << std::endl;
 	*this = copy;
 }
 
@@ -42,7 +42,7 @@ Dog::~Dog()
 // Overloaded Operators
 Dog &Dog::operator=(const Dog &src)
 {
-	std::cout << "Dog Assignation operator called" << std::endl;
+	std::cout << GREEN_H <<"Dog Assignation operator called" << RESET_H << std::endl;
 	if (this == &src)
 		return *this;
 
@@ -69,7 +69,7 @@ void Dog::getIdeas() const
 {
     std::cout << BLUE_H << "Dog getIdeas called" << RESET_H << std::endl;
     std::string tmp= _brain->getIdea(42);
-    std::cout << PURPLE_H << _brain->getIdea(50) << RESET_H <<std::endl;
+    std::cout << YELLOW_H<< _brain->getIdea(50) << RESET_H <<std::endl;
 }
 
 // Setter
