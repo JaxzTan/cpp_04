@@ -6,7 +6,7 @@
 /*   By: chtan <chtan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 16:42:24 by chtan             #+#    #+#             */
-/*   Updated: 2025/05/02 16:44:35 by chtan            ###   ########.fr       */
+/*   Updated: 2025/05/07 09:39:40 by chtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ Brain::Brain()
 Brain::Brain(const Brain &copy)
 {
     std::cout << GREEN_H << "Brain copy constructor called" << RESET_H << std::endl;
-    *this = copy;
+    for (size_t i = 0; i < 100; i++)
+        this->_ideas[i] = copy._ideas[i];
 }
 
 Brain::~Brain()
 {
     std::cout << RED_H << "Brain destructor called" << RESET_H << std::endl;
 }
+
 Brain &Brain::operator=(const Brain &src)
 {
     std::cout << YELLOW_H << "Brain assignment operator called" << RESET_H << std::endl;
